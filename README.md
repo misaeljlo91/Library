@@ -19,10 +19,7 @@ El desarrollo de esta aplicación se hizo a través de IntelliJ IDEA.
 ---
 <h3>Uso de la WebAPP</h3>
 
-Para hacer uso de la WebAPP lo primero que se debe hacer es iniciar sesión esto se debe a que se le fue añadida una capa de seguridad que permite que únicamente un usuario registrado y autenticado pueda acceder al sistema. Los datos para acceder al sistema son:
-
-<strong>Usuario:</strong> admin <br>
-<strong>Contraseña:</strong> admin
+Para hacer uso de la WebAPP lo primero que se debe hacer es iniciar sesión esto se debe a que se le fue añadida una capa de seguridad que permite que únicamente un usuario registrado y autenticado pueda acceder al sistema.
 
 <img src="https://github.com/misaeljlo91/Library/blob/master/src/main/resources/static/web/assets/front-end/inicio-sesion.png" height="150">
 
