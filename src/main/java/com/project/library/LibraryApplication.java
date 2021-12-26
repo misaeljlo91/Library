@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class LibraryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LibraryApplication.class, args);
+		SpringApplication.run(LibraryApplication.class);
 	}
 
 	@Autowired
