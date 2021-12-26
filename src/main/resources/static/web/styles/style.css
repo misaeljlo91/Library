@@ -1,0 +1,379 @@
+/* Paleta de colores */
+
+.color1 {color: #582a08;}
+.color2 {color: #853d0b;}
+.color3 {color: #9a8a3d;}
+.color4 {color: #fcfcfc;}
+.color5 {color: #878723;}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    user-select: none;
+}
+[v-cloak]{
+    display: none;
+}
+.swal-button--confirm{
+    background-color: #853d0b;
+}
+
+/* HEADER */
+
+header{
+    background-image: url("../assets/book-library.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 2.5rem 0 2.5rem 0;
+}
+a.sign-out{
+    padding: 0 2rem .5rem 0 !important;
+    text-decoration: none;
+    color: #fcfcfc;
+}
+a.sign-out:hover{
+    text-decoration: underline;
+}
+h1#title{
+    text-align: center;
+    color: #fcfcfc;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* MAIN */
+
+main{
+    margin: 1.5rem 2rem 1.5rem 2rem !important;
+}
+
+/* CONTENIDO EN INDEX.HTML */
+
+div.formulary-signIn{
+    width: 50rem !important;
+    height: 24.2rem !important;
+    background-image: url("../assets/books-table.jpg");
+    background-size: cover;
+    border-radius: 20px;
+    padding: 1rem;
+}
+form#index{
+    background-color: rgb(255, 255, 255, .5);
+}
+div.invalid-content{
+    padding: .5rem;
+    margin: .5rem 0 .5rem 0;
+}
+p#invalid{
+    margin: 0 0 0 1rem;
+}
+
+/* CONTENIDO EN MANAGER.HTML */
+
+/* COLUMNA DE REGISTRO */
+
+form{
+    background-color: #878723;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+label.formulary{
+    margin: 0;
+    font-weight: bold;
+}
+div#add-book, div#add-book-2{
+    text-align: center;
+}
+input.formulary-add, input.formulary-add-2{
+    background-color: #853d0b;
+    border: none;
+    color: #fcfcfc;
+}
+input.formulary-add:hover, input.formulary-add-2:hover{
+    background-color: #582a08;
+    text-decoration: underline;
+}
+input.formulary-add{
+    margin-right: .8rem !important;
+}
+
+/* COLUMNA DE TABLA */
+
+button#search{
+    background-color: #853d0b;
+    padding: .5rem;
+}
+div#search-book{
+    background: none;
+    border: none;
+}
+div.searchAlert{
+    margin-bottom: 0;
+}
+div.table-content{
+    margin-top: 3rem;
+    overflow-y: scroll;
+    height: 22rem;
+}
+thead{
+    background-color: #878723;
+}
+th, td{
+    text-align: center;
+}
+
+/* TARJETA VISTA MOBILE */
+
+div#mobile{
+    display: none;
+}
+div.card{
+    padding: 0;
+    margin-top: .5rem;
+}
+h4.book-title{
+    font-weight: bold;
+    font-style: italic;
+}
+p.data-book, p.data-book-2{
+    margin: 0;
+}
+div.card-footer{
+    background: linear-gradient(to top, #853d0b, #9a8a3d);
+    border: none;
+    text-align: right;
+}
+
+/* CONTENIDO EN DATA-BOOK.HTML */
+
+a.button{
+    background-color: #853d0b;
+    border: none;
+}
+a.button:hover{
+    background-color: #582a08;
+    text-decoration: underline;
+}
+div#image{
+    margin-top: .5rem;
+    text-align: center;
+}
+img#books{
+    border-radius: 20px;
+    height: 245px !important;
+}
+h4.data-change{
+    border-left: 3px solid #582a08;
+    padding: .8rem 0 .8rem 1rem !important;
+    margin: 0 0 1rem 1rem !important;
+}
+
+/* FOOTER */
+
+footer{
+    background: linear-gradient(to top, #853d0b, #9a8a3d);
+    padding-top: 1rem;
+    text-align: center;
+    color: #fcfcfc;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+    /* HEADER */
+
+    a.sign-out{
+        padding: 0 1rem .5rem 0 !important;
+    }
+
+    /* CONTENIDO EN INDEX.HTML */
+
+    div.formulary-signIn{
+        height: 21rem !important;
+    }
+
+    /* CONTENIDO EN DATA-BOOK.HTML */
+
+    img#books{
+        height: 195px !important;
+    }
+
+    /* FOOTER */
+
+    p#footer-page{
+        font-size: small !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* CONTENIDO EN INDEX.HTML */
+
+    div.formulary-signIn{
+        width: 40rem !important;
+        height: 20.5rem !important;
+    }
+    p#invalid{
+        font-size: small !important;
+    }
+
+    /* COLUMNA DE REGISTRO */
+
+    input.formulary-add{
+        margin-right: .3rem !important;
+    }
+
+    /* COLUMNA DE TABLA */
+
+    th, td{
+        font-size: small;
+    }
+
+    /* CONTENIDO EN DATA-BOOK.HTML */
+
+    img#books{
+        height: 145px !important;
+    }
+    h4.data-change{
+        font-size: large !important;
+        padding: .4rem 0 .4rem .5rem !important;
+        margin: 0 0 .5rem .5rem !important;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    /* HEADER */
+
+    a.sign-out{
+        padding: 0 1rem .3rem 0 !important;
+    }
+
+    /* CONTENIDO EN INDEX.HTML */
+
+    div.formulary-signIn{
+        margin-left: .2rem !important;
+        width: 22rem !important;
+        height: 21rem !important;
+    }
+
+    /* CONTENIDO EN MANAGER.HTML */
+
+    div#registro{
+        margin-bottom: 1rem !important;
+    }
+    div.formulary-2{
+        margin-bottom: .5rem !important;
+    }
+    div.formulary-3{
+        text-align: center !important;
+    }
+    input.formulary-add{
+        margin-right: .8rem !important;
+    }
+    div.searchAlert{
+        padding: .5rem;
+        font-size: small !important;
+    }
+
+    /* TARJETA VISTA MOBILE */
+
+    div#desktop, div#image{
+        display: none;
+    }
+    div#mobile{
+        display: block;
+        margin-top: 3rem;
+    }
+    p.data-book-2{
+        margin-bottom: .5rem !important;
+    }
+    h4.price{
+        margin: 0;
+    }
+
+    /* CONTENIDO EN DATA-BOOK.HTML */
+
+    a.button{
+        margin-bottom: .5rem;
+    }
+    h4.data-change{
+        font-size: x-large !important;
+        padding: .5rem 0 .5rem .8rem !important;
+        margin: 0 0 .8rem 1rem !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    /* CONTENIDO EN INDEX.HTML */
+
+    div.formulary-signIn{
+        width: 19.5rem !important;
+    }
+    p#invalid{
+        margin: 0 0 0 .5rem !important;
+        font-size: 12px !important;
+    }
+
+    /* TARJETA VISTA MOBILE */
+
+    h4.book-title, h4.price{
+        font-size: large !important;
+    }
+    p.data-book-2{
+        margin-bottom: .3rem !important;
+    }
+    h4.price{
+        font-weight: bold;
+        margin: 0;
+    }
+
+    /* FOOTER */
+
+    footer{
+        padding: 1rem .5rem .2rem .5rem !important;
+    }
+    p#footer-page{
+        font-size: x-small !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /* HEADER */
+
+    a.sign-out{
+        padding: 0 .7rem .3rem 0 !important;
+        font-size: small;
+    }
+
+    /* CONTENIDO EN INDEX.HTML */
+
+    div.formulary-signIn{
+        margin-left: 0 !important;
+        width: 17.5rem !important;
+        height: 20.2rem !important;
+    }
+    p#invalid{
+        font-size: 10px !important;
+    }
+
+    /* TARJETA VISTA MOBILE */
+
+    h4.book-title, h4.price{
+        font-size: medium !important;
+    }
+    p.data-book, p.data-book-2{
+        font-size: small !important;
+    }
+    h4.price{
+        font-weight: bold;
+        margin: 0;
+    }
+
+    /* CONTENIDO EN DATA-BOOK.HTML */
+
+    h4.data-change{
+        font-size: larger !important;
+        padding: .4rem 0 .4rem .5rem !important;
+        margin: 0 0 .5rem .5rem !important;
+    }
+}
