@@ -13,7 +13,7 @@ Se desarrolló una API Rest con tecnologías Full Stack:
 
 Para testear dicha aplicación se usó un test de integración que permite verificar si un libro existe en el repositorio ó si algún repositorio contiene información. Para hacer uso de este test se debe comentar las líneas de códigos donde se configura la encriptación de la contraseña del usuario, esto debido a que se agregó una capa de seguridad y se usó la configurción para encriptar dicha contraseña. El almacenamiento de datos se hace a través de la base de datos H2.
 
-El desarrollo de esta aplicación se hizo a través de IntelliJ IDEA.
+El desarrollo de esta aplicación se hizo a través de IntelliJ IDEA. Para compiliar y ejecutar este proyecto es necesario utilizar la herramienta de Gradle ya que fue la utilizada para la construcción y desarrollo del mismo.
 
 # <h4><img src="https://github.com/misaeljlo91/Library/blob/master/src/main/resources/static/web/assets/check.png"> Frontend:</h4> Para el desarrollo frontend se usó HTML5, CSS, JavaScript, los frameworks de Vue.js, SweetAlert , Moment.js y Numeral.js; de igual forma se usó la biblioteca de Bootstrap. Para mostrar la información de los libros en el repositorio se hace un llamado a la API a través de Axios.
 ---
