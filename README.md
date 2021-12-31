@@ -8,7 +8,7 @@ Se desarrolló una API Rest con tecnologías Full Stack:
 
 1) Ver la información registrada.
 2) Registrar un nuevo libro completando los datos necesarios.
-3) Modificar un libro por su título, su autor, su fecha de publicación o actualizar el precio.
+3) Modificar un libro por su título, su autor, su fecha de publicación (el formato de la fecha puede variar dependiendo de la configuración de su equipo) o actualizar el precio.
 4) Eliminar un libro del repositorio.
 
 Para testear dicha aplicación se usó un test de integración que permite verificar si un libro existe en el repositorio ó si algún repositorio contiene información. Para hacer uso de este test se debe comentar las líneas de códigos donde se configura la encriptación de la contraseña del usuario, esto debido a que se agregó una capa de seguridad y se usó la configurción para encriptar dicha contraseña. El almacenamiento de datos se hace a través de la base de datos H2.
