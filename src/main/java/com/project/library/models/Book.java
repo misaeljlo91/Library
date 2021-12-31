@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Book {
 
-    @Id
+    @Id //Para generar un identificador único
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;

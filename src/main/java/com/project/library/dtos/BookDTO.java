@@ -10,7 +10,6 @@ public class BookDTO {
     private double price;
     private String releaseDate;
 
-
     //CONSTRUCTORES
     public BookDTO() { }
 

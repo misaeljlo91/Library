@@ -19,20 +19,16 @@
 <!-- Contenido -->
     <main>
         <div class="row">
-            <div class="col-md-4"> <!-- Imagen -->
-
-                <!-- Botón de BACK -->
-                    <div class="position-relative">
-                        <a class="btn btn-primary button" href="manager.html" role="button">Volver</a>
-                    </div>
-                    <div id="image">
-                        <img src="./assets/book.jpg" alt="Books" id="books">
-                    </div>
+            <div class="col-md-4"> <!-- Botón de BACK -->
+                <a class="btn btn-primary button" href="manager.html" role="button">Volver</a>
             </div>
 
-            <div class="col-md-4" id="registro"> <!-- Formulario de registro de datos -->
-                <h4 class="data-change">Cambiar datos del libro</h4>
+            <div class="col-md-4" id="registro"> <!-- Formulario de cambio de datos -->
                 <form @submit.prevent="putData">
+                    <div class="mb-3">
+                        <label for="title2" class="form-label formulary">Título del libro:</label>
+                        <input v-model="data.title" type="text" class="form-control" id="title2" required>
+                    </div>
                     <div class="mb-3">
                         <label for="writer" class="form-label formulary">Autor del libro:</label>
                         <input v-model="data.writer" type="text" class="form-control" id="writer" required>
@@ -49,23 +45,6 @@
                         </div>
                     </div>
                     <div class="form-floating" id="add-book">
-                        <input class="btn btn-primary formulary-add" type="submit" value="Guardar">
-                        <input class="btn btn-primary formulary-add-2" type="reset" value="Limpiar">
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4"> <!-- Formulario de registro de título -->
-                <h4 class="data-change">Cambiar título del libro</h4>
-                <form @submit.prevent="patchTitle">
-                    <div class="mb-3">
-                        <label for="title2" class="form-label formulary">Título registrado:</label>
-                        <input :value="listBookID.title" type="text" class="form-control" id="title2" disabled readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="newTitle" class="form-label formulary">Nuevo título:</label>
-                        <input v-model="data.title" type="text" class="form-control" id="newTitle" required>
-                    </div>
-                    <div class="form-floating" id="add-book-2">
                         <input class="btn btn-primary formulary-add" type="submit" value="Guardar">
                         <input class="btn btn-primary formulary-add-2" type="reset" value="Limpiar">
                     </div>

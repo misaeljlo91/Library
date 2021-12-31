@@ -20,7 +20,7 @@ const app = Vue.createApp({
     },
     methods:{
         dataBooks(){
-            axios.get("/api/books")
+            axios.get("/api/book")
             .then(response => {
                 this.listBooks = response.data
 
@@ -35,6 +35,7 @@ const app = Vue.createApp({
             .then(response =>{
                 this.listBookID = response.data
 
+                this.data.title = response.data.title
                 this.data.writer = response.data.writer
                 this.data.price = response.data.price
                 this.data.releaseDate = response.data.releaseDate
@@ -68,7 +69,12 @@ const app = Vue.createApp({
                 buttons: true
             })
             .then(confirmation => {
-                axios.post("/api/book",`title=${this.data.title}&writer=${this.data.writer}&price=${this.data.price}&date=${this.data.releaseDate}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
+                axios.post("/api/book",{
+                    title: this.data.title,
+                    writer: this.data.writer,
+                    price: this.data.price,
+                    date: this.data.releaseDate
+                })
                 .then(response => {
                     swal({
                         title: "Registro exitoso",
@@ -76,7 +82,7 @@ const app = Vue.createApp({
                         button: true
                     })
                     .then(response => {
-                        window.location.replace("manager.html")
+                        window.location.reload()
                     })
                 })
                 .catch(error =>{
@@ -86,39 +92,6 @@ const app = Vue.createApp({
                         icon: "error"
                     })
                 })
-            })
-        },
-        patchTitle(){
-            const urlParams = new URLSearchParams(window.location.search);
-            this.bookID = urlParams.get("id");
-
-            swal({
-                title: "Confirmación",
-                text: "¿Está seguro de querer guardar este título?",
-                icon: "warning",
-                buttons: true
-            })
-            .then(confirmation => {
-                if(confirmation){
-                    axios.patch(`/api/book/title/${this.bookID}`,`title=${this.data.title}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
-                    .then(response => {
-                        swal({
-                            title: "Título guardado",
-                            icon: "success",
-                            button: true
-                        })
-                        .then(response =>{
-                            window.location.reload()
-                        })
-                    })
-                    .catch(error => {
-                        swal({
-                            title: "¡Atención!",
-                            text: error.response.data,
-                            icon: "error"
-                        })
-                    })
-                }
             })
         },
         putData(){
@@ -133,7 +106,12 @@ const app = Vue.createApp({
             })
             .then(confirmation => {
                 if(confirmation){
-                    axios.put(`/api/book/data/${this.bookID}`,`writer=${this.data.writer}&price=${this.data.price}&date=${this.data.releaseDate}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
+                    axios.put(`/api/book/${this.bookID}`,{
+                        title: this.data.title,
+                        writer: this.data.writer,
+                        price: this.data.price,
+                        date: this.data.releaseDate
+                    })
                     .then(response => {
                         swal({
                             title: "Datos guardados",
@@ -141,7 +119,7 @@ const app = Vue.createApp({
                             button: true
                         })
                         .then(response =>{
-                            window.location.reload()
+                            window.location.replace("manager.html")
                         })
                     })
                     .catch(error => {
@@ -173,7 +151,7 @@ const app = Vue.createApp({
                             button: true
                         })
                         .then(response =>{
-                            window.location.replace("manager.html")
+                            window.location.reload()
                         })
                     })
                 }
