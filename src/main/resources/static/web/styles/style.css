@@ -123,6 +123,22 @@ thead{
 th, td{
     text-align: center;
 }
+a.pagination{
+    background-color: #878723;
+    border: 1px solid #853d0b;
+    color: #fcfcfc;
+}
+a.pagination-2, a.pagination-2:hover{
+    background-color: #853d0b;
+    border: 1px solid #582a08;
+    color: #fcfcfc;
+}
+a.pagination:hover{
+    background-color: #853d0b;
+    border: 1px solid #582a08;
+    text-decoration: underline;
+    color: #fcfcfc;
+}
 
 /* TARJETA VISTA MOBILE */
 
