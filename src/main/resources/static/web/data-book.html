@@ -24,7 +24,7 @@
             </div>
 
             <div class="col-md-4" id="registro"> <!-- Formulario de cambio de datos -->
-                <form @submit.prevent="putData">
+                <form>
                     <div class="mb-3">
                         <label for="title2" class="form-label formulary">Título del libro:</label>
                         <input v-model="data.title" type="text" class="form-control" id="title2" required>
@@ -45,8 +45,8 @@
                         </div>
                     </div>
                     <div class="form-floating" id="add-book">
-                        <input class="btn btn-primary formulary-add" type="submit" value="Guardar">
-                        <input class="btn btn-primary formulary-add-2" type="reset" value="Limpiar">
+                        <a class="btn btn-primary button formulary-add" href="" role="button" @click.prevent="putData">Guardar</a>
+                        <a class="btn btn-primary button formulary-add-2" href="" role="button" @click.prevent="deleteBook(listBookID.id)">Eliminar</a>
                     </div>
                 </form>
             </div>

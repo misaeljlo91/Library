@@ -11,7 +11,9 @@ const app = Vue.createApp({
             },
             filterBook: [],
             searchBook: "",
-            noBook: false
+            noBook: false,
+            orderTitleAZ: true, orderTitleZA: false,
+            orderWriterAZ: true, orderWriterZA: false
         }
     },
     created(){
@@ -51,6 +53,60 @@ const app = Vue.createApp({
                     return 0
                 }
             })
+        },
+        orderByTitle(array, order){
+            if(order == "A-Z"){
+                this.orderTitleAZ = false
+                this.orderTitleZA = true
+
+                return array.sort((a, b) => {
+                    if(a.title < b.title){
+                        return -1
+                    }else if(a.title > b.title){
+                        return 1
+                    }
+                })
+            }
+
+            if(order == "Z-A"){
+                this.orderTitleAZ = true
+                this.orderTitleZA = false
+
+                return array.sort((a, b) => {
+                    if(a.title > b.title){
+                        return -1
+                    }else if(a.title < b.title){
+                        return 1
+                    }
+                })
+            }
+        },
+        orderByWriter(array, order){
+            if(order == "A-Z"){
+                this.orderWriterAZ = false
+                this.orderWriterZA = true
+
+                return array.sort((a, b) => {
+                    if(a.writer < b.writer){
+                        return -1
+                    }else if(a.writer > b.writer){
+                        return 1
+                    }
+                })
+            }
+
+            if(order == "Z-A"){
+                this.orderWriterAZ = true
+                this.orderWriterZA = false
+
+                return array.sort((a, b) => {
+                    if(a.writer > b.writer){
+                        return -1
+                    }else if(a.writer < b.writer){
+                        return 1
+                    }
+                })
+            }
         },
         momentDateRelease(date){
             return moment(date).format("DD/MM/YYYY")
@@ -151,7 +207,7 @@ const app = Vue.createApp({
                             button: true
                         })
                         .then(response =>{
-                            window.location.reload()
+                            window.location.replace("manager.html")
                         })
                     })
                 }

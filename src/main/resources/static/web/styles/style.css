@@ -160,14 +160,13 @@ div#image{
     margin-top: .5rem;
     text-align: center;
 }
-img#books{
-    border-radius: 20px;
-    height: 245px !important;
-}
 h4.data-change{
     border-left: 3px solid #582a08;
     padding: .8rem 0 .8rem 1rem !important;
     margin: 0 0 1rem 1rem !important;
+}
+a.formulary-add{
+    margin-right: .5rem !important;
 }
 
 /* FOOTER */
@@ -191,12 +190,6 @@ footer{
 
     div.formulary-signIn{
         height: 21rem !important;
-    }
-
-    /* CONTENIDO EN DATA-BOOK.HTML */
-
-    img#books{
-        height: 195px !important;
     }
 
     /* FOOTER */
@@ -231,13 +224,13 @@ footer{
 
     /* CONTENIDO EN DATA-BOOK.HTML */
 
-    img#books{
-        height: 145px !important;
-    }
     h4.data-change{
         font-size: large !important;
         padding: .4rem 0 .4rem .5rem !important;
         margin: 0 0 .5rem .5rem !important;
+    }
+    a.formulary-add{
+        margin-right: .3rem !important;
     }
 }
 
@@ -300,6 +293,9 @@ footer{
         font-size: x-large !important;
         padding: .5rem 0 .5rem .8rem !important;
         margin: 0 0 .8rem 1rem !important;
+    }
+    a.formulary-add{
+        margin-right: .5rem !important;
     }
 }
 
