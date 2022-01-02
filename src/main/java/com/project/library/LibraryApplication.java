@@ -52,7 +52,11 @@ public class LibraryApplication {
 			Book book21 = new Book("La metamorfosis", "Franz Kafka", 700, "1915-10-01");
 			Book book22 = new Book("Viaje al centro de la tierra", "Julio Verne", 1500, "1864-11-25");
 			Book book23 = new Book("Harry Potter y el cáliz de fuego", "J. K. Rowling", 2000, "2000-07-08");
-			Book book24 = new Book("Ángeles y demonios", "Dan Brown", 1400, "2000-01-01");
+			Book book24 = new Book("Angeles y demonios", "Dan Brown", 1400, "2000-01-01");
+			Book book25 = new Book("Crepúsculo", "Stephenie Meyer", 1200, "2005-10-05");
+			Book book26 = new Book("Don Quijote de la Mancha", "Miguel de Cervantes", 950, "1605-01-01");
+			Book book27 = new Book("Bajo la misma estrella", "John Green", 800, "2012-01-10");
+			Book book28 = new Book("El diablo de la botella", "Robert Louis Stevenson", 400, "1891-03-01");
 
 			bookRepository.save(book1);
 			bookRepository.save(book2);
@@ -78,6 +82,10 @@ public class LibraryApplication {
 			bookRepository.save(book22);
 			bookRepository.save(book23);
 			bookRepository.save(book24);
+			bookRepository.save(book25);
+			bookRepository.save(book26);
+			bookRepository.save(book27);
+			bookRepository.save(book28);
 		};
 	}
 }

@@ -2,7 +2,6 @@ const app = Vue.createApp({
     data(){
         return{
             listBooks: [],
-            listBookID: [],
             data:{
                 title: "",
                 writer: "",
@@ -18,29 +17,14 @@ const app = Vue.createApp({
     },
     created(){
         this.dataBooks()
-        this.dataBookID()
     },
     methods:{
         dataBooks(){
-            axios.get("/api/book?page=0")
+            axios.get("/api/book?page=1")
             .then(response => {
                 this.listBooks = response.data.content
 
                 this.orderById(this.listBooks)
-            })
-        },
-        dataBookID(){
-            const urlParams = new URLSearchParams(window.location.search);
-            this.bookID = urlParams.get("id");
-    
-            axios.get(`/api/book/${this.bookID}`)
-            .then(response =>{
-                this.listBookID = response.data
-
-                this.data.title = response.data.title
-                this.data.writer = response.data.writer
-                this.data.price = response.data.price
-                this.data.releaseDate = response.data.releaseDate
             })
         },
         orderById(array){
@@ -150,44 +134,6 @@ const app = Vue.createApp({
                 })
             })
         },
-        putData(){
-            const urlParams = new URLSearchParams(window.location.search);
-            this.bookID = urlParams.get("id");
-
-            swal({
-                title: "Confirmación",
-                text: "¿Está seguro de querer guardar los datos?",
-                icon: "warning",
-                buttons: true
-            })
-            .then(confirmation => {
-                if(confirmation){
-                    axios.put(`/api/book/${this.bookID}`,{
-                        title: this.data.title,
-                        writer: this.data.writer,
-                        price: this.data.price,
-                        date: this.data.releaseDate
-                    })
-                    .then(response => {
-                        swal({
-                            title: "Datos guardados",
-                            icon: "success",
-                            button: true
-                        })
-                        .then(response =>{
-                            window.location.reload()
-                        })
-                    })
-                    .catch(error => {
-                        swal({
-                            title: "¡Atención!",
-                            text: error.response.data,
-                            icon: "error"
-                        })
-                    })
-                }
-            })
-        },
         deleteBook(id){
             this.bookID = id;
 
@@ -207,7 +153,7 @@ const app = Vue.createApp({
                             button: true
                         })
                         .then(response =>{
-                            window.location.replace("manager.html")
+                            window.location.reload()
                         })
                     })
                 }

@@ -7,16 +7,11 @@ import com.project.library.repositories.BookRepository;
 import com.project.library.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 @RestController
 @RequestMapping("/api")
@@ -28,26 +23,11 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    /*@GetMapping("/book")
-    public String getAll(@RequestParam Map<String, Object> params, Model model){
-        int page = params.get("page") != null ? (Integer.valueOf(params.get("page").toString()) - 1) : 0;;
+    @GetMapping("/book")
+    public Page<Book> getListBooks(@PageableDefault(size = 8, page = 0) Pageable pageable){
+        Page<Book> listBooks = bookService.findAll(pageable);
 
-        PageRequest pageRequest = PageRequest.of(page, 10); //Con PageRequest vamos a buscar la página y cuantos registro quiero mostrar por página
-        Page<Book> bookPage = bookService.getAll(pageRequest);
-
-        int totalPage = bookPage.getTotalPages(); //Indica el total de páginas en la base de datos
-        if(totalPage > 0){
-            List<Integer> pages = IntStream.rangeClosed(1, totalPage).boxed().collect(Collectors.toList());
-            model.addAttribute("pages", pages);
-        }
-
-        model.addAttribute("list", bookPage.getContent());
-        return "library/library.main/static/web/manager.html";
-    }*/
-
-    @GetMapping("/book") //CONSEGUIR LA LISTA DE LIBROS
-    public List<BookDTO> getListBooks(){
-        return bookRepository.findAll().stream().map(book -> new BookDTO(book)).collect(Collectors.toList());
+        return listBooks;
     }
 
     @GetMapping("/book/{id}") //CONSEGUIR UN LIBRO POR SU ID

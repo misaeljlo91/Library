@@ -113,9 +113,7 @@ div.searchAlert{
     margin-bottom: 0;
 }
 div.table-content{
-    margin: 3rem 0 1rem 0;
-    /* overflow-y: scroll;
-    height: 22rem; */ /* No va para la paginación */
+    margin-top: .5rem;
 }
 thead{
     background-color: #878723;
@@ -126,7 +124,7 @@ th, td{
 ul.pagination{
     margin: 0;
 }
-a.pagination{
+a.pagination, a.pagination-3, a.pagination-3:hover{
     background-color: #878723;
     border: 1px solid #853d0b;
     color: #fcfcfc;
@@ -167,11 +165,11 @@ div.card-footer{
 
 /* CONTENIDO EN DATA-BOOK.HTML */
 
-a.button{
+a.button, button.back{
     background-color: #853d0b;
     border: none;
 }
-a.button:hover{
+a.button:hover, button.back:hover{
     background-color: #582a08;
     text-decoration: underline;
 }
@@ -311,12 +309,12 @@ footer{
 
     /* TARJETA VISTA MOBILE */
 
-    div#desktop, nav.pagination{
+    div#desktop{
         display: none;
     }
     div#mobile{
         display: block;
-        margin-top: 3rem;
+        margin-top: .5rem;
     }
     p.data-book-2{
         margin-bottom: .5rem !important;
@@ -327,7 +325,7 @@ footer{
 
     /* CONTENIDO EN DATA-BOOK.HTML */
 
-    a.button{
+    button.back{
         margin-bottom: .5rem;
     }
     h4.data-change{

@@ -20,7 +20,7 @@
     <main>
         <div class="row">
             <div class="col-md-4"> <!-- Botón de BACK -->
-                <a class="btn btn-primary button" href="manager.html" role="button">Volver</a>
+                <button type="button" class="btn btn-primary back" onclick="history.go(-1)">Volver</button>
             </div>
 
             <div class="col-md-4" id="registro"> <!-- Formulario de cambio de datos -->
@@ -54,7 +54,7 @@
     </main>
 <!-- Pie de página -->
     <footer class="row g-0 align-items-center">
-        <p class="col" id="footer-page">&copy; {{momentDateFooter(new Date())}} Misael J. López | Fullstack JAVA Web Developer</p>
+        <p class="col" id="footer-page">&copy; {{momentDateFooter(new Date())}} Misael J. López | Full Stack JAVA Web Developer</p>
     </footer>
 </div>
 <!-- Bootstrap -->

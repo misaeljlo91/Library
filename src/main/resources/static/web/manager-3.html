@@ -48,10 +48,31 @@
             </div>
             <div class="col-md-9" v-if="listBooks.length > 0">
                 <!-- Botón de búsqueda -->
-                <div class="position-relative">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="dropdown" data-bs-target="#search-button" aria-controls="search-button" aria-expanded="false" aria-label="Toggle navigation" id="search" style="float: right;"><img src="./assets/search.png" alt="Search"></button>
-                    <div class="navbar-collapse dropdown-menu" id="search-book">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Buscar" v-model="searchBook">
+                <div class="row">
+                    <div class="col-9 align-self-center">
+                        <nav aria-label="Page navigation example" class="pagination">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link pagination" href="manager.html" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link pagination" href="manager-2.html">2</a></li>
+                                <li class="page-item"><a class="page-link pagination-2">3</a></li>
+                                <li class="page-item"><a class="page-link pagination" href="manager-4.html">4</a></li>
+                                <li class="page-item">
+                                    <a class="page-link pagination" href="manager-4.html" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-3 position-relative">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="dropdown" data-bs-target="#search-button" aria-controls="search-button" aria-expanded="false" aria-label="Toggle navigation" id="search" style="float: right;"><img src="./assets/search.png" alt="Search"></button>
+                        <div class="navbar-collapse dropdown-menu" id="search-book">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Buscar" v-model="searchBook">
+                        </div>
                     </div>
                 </div>
 
@@ -97,23 +118,6 @@
                         </tbody>
                     </table>
                 </div>
-                <nav aria-label="Page navigation example" class="position-relative pagination">
-                    <ul class="position-relative bottom-0 start-50 translate-middle-x pagination">
-                        <li class="page-item">
-                            <a class="page-link pagination" href="manager.html" aria-label="Previous"> <!-- Link provisorio -->
-                            <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link pagination" href="manager.html">1</a></li> <!-- Link provisorio -->
-                        <li class="page-item"><a class="page-link pagination" href="manager-2.html">2</a></li> <!-- Link provisorio -->
-                        <li class="page-item"><a class="page-link pagination-2" href="manager-3.html">3</a></li> <!-- Link provisorio -->
-                        <li class="page-item">
-                            <a class="page-link pagination" href="manager-3.html" aria-label="Next"> <!-- Link provisorio -->
-                            <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
 
                 <!-- Vista mobile -->
                 <div id="mobile">
@@ -168,7 +172,7 @@
     </main>
 <!-- Pie de página -->
     <footer class="row g-0 align-items-center">
-        <p class="col" id="footer-page">&copy; {{momentDateFooter(new Date())}} Misael J. López | Fullstack JAVA Web Developer</p>
+        <p class="col" id="footer-page">&copy; {{momentDateFooter(new Date())}} Misael J. López | Full Stack JAVA Web Developer</p>
     </footer>
 </div>
 
@@ -183,6 +187,6 @@
 <!-- Vue.js -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./scripts/manager.js"></script>
+    <script src="./scripts/manager-3.js"></script>
 </body>
 </html>
