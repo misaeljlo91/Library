@@ -113,15 +113,18 @@ div.searchAlert{
     margin-bottom: 0;
 }
 div.table-content{
-    margin-top: 3rem;
-    overflow-y: scroll;
-    height: 22rem;
+    margin: 3rem 0 1rem 0;
+    /* overflow-y: scroll;
+    height: 22rem; */ /* No va para la paginación */
 }
 thead{
     background-color: #878723;
 }
 th, td{
     text-align: center;
+}
+ul.pagination{
+    margin: 0;
 }
 a.pagination{
     background-color: #878723;
@@ -208,6 +211,18 @@ footer{
         height: 21rem !important;
     }
 
+    /* COLUMNA DE REGISTRO */
+
+    input.formulary-add{
+        margin-right: .5rem !important;
+    }
+
+    /* COLUMNA DE TABLA */
+
+    th, td{
+        font-size: 14px !important;
+    }
+
     /* FOOTER */
 
     p#footer-page{
@@ -228,14 +243,21 @@ footer{
 
     /* COLUMNA DE REGISTRO */
 
+    label.formulary{
+        font-size: 14px !important;
+
+    }
     input.formulary-add{
-        margin-right: .3rem !important;
+        margin: 0 .3rem .5rem 0 !important;
+    }
+    input.formulary-add-2{
+        margin-left: -.4rem !important;
     }
 
     /* COLUMNA DE TABLA */
 
     th, td{
-        font-size: small;
+        font-size: 12px !important;
     }
 
     /* CONTENIDO EN DATA-BOOK.HTML */
@@ -277,7 +299,10 @@ footer{
         text-align: center !important;
     }
     input.formulary-add{
-        margin-right: .8rem !important;
+        margin: 0 .8rem 0 0 !important;
+    }
+    input.formulary-add-2{
+        margin-left: 0 !important;
     }
     div.searchAlert{
         padding: .5rem;
@@ -286,7 +311,7 @@ footer{
 
     /* TARJETA VISTA MOBILE */
 
-    div#desktop, div#image{
+    div#desktop, nav.pagination{
         display: none;
     }
     div#mobile{

@@ -115,7 +115,7 @@ const app = Vue.createApp({
             return moment(date).format("YYYY")
         },
         numberFormat(data){
-            return numeral(data).format("$ 0,0.00")
+            return numeral(data).format("0,0.00")
         },
         postBook(){
             swal({
@@ -175,7 +175,7 @@ const app = Vue.createApp({
                             button: true
                         })
                         .then(response =>{
-                            window.location.replace("manager.html")
+                            window.location.reload()
                         })
                     })
                     .catch(error => {
